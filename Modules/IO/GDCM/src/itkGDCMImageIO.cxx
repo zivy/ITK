@@ -1008,7 +1008,9 @@ GDCMImageIO::Write(const void * buffer)
       }
       else
       {
-        itkDebugMacro("GDCMImageIO: non-DICOM and non-ITK standard key = " << key);
+        itkWarningMacro(
+          "ignoring non-DICOM and non-ITK standard key (DICOM key structure is group|element with pipe separator) = "
+          << key);
       }
     }
 
